@@ -1,0 +1,190 @@
+@font-face {
+    font-family: "Proletarsk";
+    src: url("/fonts/Proletarsk.ttf") format("truetype"),         
+  }
+
+@mixin sloganFont {
+    font-family: Proletarsk;
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 400;
+    // line-height: 33px;
+    letter-spacing: 0.05em;
+    text-align: left;
+    text-align: center;
+}
+
+@mixin mainText {
+    font-family: Proletarsk;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    // line-height: 59px;
+    letter-spacing: 0.15em;
+    text-align: center;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+
+@mixin btnText {
+    font-family: Roboto;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    letter-spacing: 0.05em;
+    text-align: left;
+}
+
+$backgroundColor : linear-gradient(1.17deg, #0b1d2e 1.13%, #172035 1.14%, #0F172D 99.14%);
+
+$btnGradient : linear-gradient(180deg, #E52D27 0.64%, #BF171D 100.03%);
+$iconColor : rgba(210, 34, 34, 1);
+@mixin iconShadows {
+    box-shadow: 3px 3px 8px 0px rgba(155, 25, 25, 0.9);
+    box-shadow: -3px -3px 6px 0px rgba(255, 43, 43, 0.9);
+    box-shadow: 3px -3px 6px 0px rgba(155, 25, 25, 0.2);
+    box-shadow: -3px 3px 6px 0px rgba(155, 25, 25, 0.2);
+    box-shadow: -1px -1px 2px 0px rgba(155, 25, 25, 0.5) inset;
+    box-shadow: 1px 1px 2px 0px rgba(255, 43, 43, 0.3) inset;
+} 
+
+/////// END OF VARIABLES
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: $backgroundColor;  
+    color: #bdbdbd; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+}
+
+p {
+    @include sloganFont();  
+}
+
+h2 {
+    @include mainText();
+    margin-bottom: 150px;
+    z-index: 1000;
+    color: #fefefe;
+}
+
+@mixin bobEffect {
+    animation: bob ease-in-out 1.5s;
+    animation-iteration-count: infinite;
+    transform-origin: 50% 50%;
+}
+
+.head {
+    margin-top: 100px;
+    margin-bottom: 150px;
+    z-index: 1000;
+}
+
+#logo {
+    width: 634px;
+    max-width: 634px;
+}
+
+.cta {
+    z-index: 1000;
+    .slogan {
+        margin-bottom: 40px;
+       
+    }
+}
+
+.goYtb {      
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    z-index: 1000;
+    // padding-right: 30px;
+    // padding-left: 20px;    
+    width: 428px;
+    height: 110px;
+    background: url(/imgs/btn-bg.svg);
+    background-size: contain;
+    background-position: 0px 0px;
+    background-repeat: no-repeat;  
+    transition: all ease-in-out 300ms;
+    
+    &:hover {
+        @include bobEffect();    
+    }  
+
+    span {
+        @include btnText();
+        color: white;
+        margin-left: -50px;
+        margin-top: -10px;
+    }
+}
+
+#iso1 {
+    position: absolute;
+    width: 677.79px;
+    height: 421.36px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    // opacity: 50%;   
+}
+
+#iso2 {
+    position: absolute;
+    // width: 783.02px;
+    // height: 776.46px;
+    right: 0px;
+    top: 185.01px;
+    z-index: 500; 
+    opacity: 50%;   
+}
+
+#strip {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-30%);
+        left: 0;
+        z-index: 2;
+}
+
+.filter {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    background: linear-gradient(1.17deg, rgba(21, 35, 49, 0.3) 1.13%, rgba(34, 39, 54, 0.3) 1.14%, rgba(0, 0, 0, 0.3) 99.14%);
+    background-blend-mode: multiply;
+    backdrop-filter: blur(3px);
+    z-index: 3;
+}
+
+@keyframes bob {
+    0% {
+        transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(0px, -5px);
+    }
+
+    100% {
+        transform: translate(0px, 0px);
+    }
+}

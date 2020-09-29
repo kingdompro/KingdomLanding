@@ -1,0 +1,187 @@
+@font-face {
+  font-family: "Proletarsk";
+  src: url("/fonts/Proletarsk.ttf") format("truetype");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(1.17deg, #0b1d2e 1.13%, #172035 1.14%, #0F172D 99.14%);
+  color: #bdbdbd;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+p {
+  font-family: Proletarsk;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-align: center;
+}
+
+h2 {
+  font-family: Proletarsk;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  margin-bottom: 150px;
+  z-index: 1000;
+  color: #fefefe;
+}
+
+.head {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  z-index: 1000;
+}
+
+#logo {
+  width: 634px;
+  max-width: 634px;
+}
+
+.cta {
+  z-index: 1000;
+}
+
+.cta .slogan {
+  margin-bottom: 40px;
+}
+
+.goYtb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  z-index: 1000;
+  width: 428px;
+  height: 110px;
+  background: url(/imgs/btn-bg.svg);
+  background-size: contain;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms;
+}
+
+.goYtb:hover {
+  -webkit-animation: bob ease-in-out 1.5s;
+          animation: bob ease-in-out 1.5s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+}
+
+.goYtb span {
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 33px;
+  letter-spacing: 0.05em;
+  text-align: left;
+  color: white;
+  margin-left: -50px;
+  margin-top: -10px;
+}
+
+#iso1 {
+  position: absolute;
+  width: 677.79px;
+  height: 421.36px;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+}
+
+#iso2 {
+  position: absolute;
+  right: 0px;
+  top: 185.01px;
+  z-index: 500;
+  opacity: 50%;
+}
+
+#strip {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-30%);
+          transform: translateY(-30%);
+  left: 0;
+  z-index: 2;
+}
+
+.filter {
+  position: absolute;
+  width: 1920px;
+  height: 1080px;
+  left: 0px;
+  top: 0px;
+  background: linear-gradient(1.17deg, rgba(21, 35, 49, 0.3) 1.13%, rgba(34, 39, 54, 0.3) 1.14%, rgba(0, 0, 0, 0.3) 99.14%);
+  background-blend-mode: multiply;
+  -webkit-backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
+  z-index: 3;
+}
+
+@-webkit-keyframes bob {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+
+@keyframes bob {
+  0% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+  50% {
+    -webkit-transform: translate(0px, -5px);
+            transform: translate(0px, -5px);
+  }
+  100% {
+    -webkit-transform: translate(0px, 0px);
+            transform: translate(0px, 0px);
+  }
+}
+/*# sourceMappingURL=styles.css.map */
