@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @font-face {
     font-family: "Proletarsk";
-    src: url("/fonts/Proletarsk.ttf") format("truetype"),         
+    src: url("./fonts/Proletarsk.ttf") format("truetype"),         
   }
 
 @mixin sloganFont {
@@ -145,7 +145,7 @@ h2 {
     }
 
     .icon {
-        background: url(/imgs/ytb.svg);
+        background: url(./imgs/ytb.svg);
         background-size: contain;
         background-position: 0px 0px;
         background-repeat: no-repeat;
