@@ -126,7 +126,8 @@ h2 {
     padding-left: 20px;    
     width: 428px;
     height: 110px;
-    background: url(imgs/btn-bg.svg);
+    // background: url(/imgs/btn-bg.svg);
+    background: url(https://kingdompro.github.io/KingdomLanding/imgs/btn-bg.svg);
     background-size: contain;
     background-position: 0px 0px;
     background-repeat: no-repeat;  
@@ -145,7 +146,8 @@ h2 {
     }
 
     .icon {
-        background: url(imgs/ytb.svg);
+        background: url(https://kingdompro.github.io/KingdomLanding//imgs/ytb.svg);
+        // background: url(/imgs/ytb.svg);
         background-size: contain;
         background-position: 0px 0px;
         background-repeat: no-repeat;
