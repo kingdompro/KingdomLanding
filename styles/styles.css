@@ -21,16 +21,35 @@ body {
 }
 
 .container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  height: 100vh;
+  display: -ms-grid;
+  display: grid;
+  justify-items: center;
+  padding: 5%;
+}
+
+h2 {
+  font-family: 'Proletarsk', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: 5px;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  z-index: 1000;
+  color: white;
+}
+
+.head {
+  z-index: 1000;
+}
+
+#logo {
+  width: 634px;
+  max-width: 634px;
 }
 
 p {
@@ -43,40 +62,15 @@ p {
   text-align: center;
 }
 
-h2 {
-  font-family: 'Proletarsk', sans-serif;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 600;
-  letter-spacing: 5px;
-  text-align: center;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-  margin-bottom: 150px;
-  z-index: 1000;
-  color: white;
-}
-
-.head {
-  margin-top: 100px;
-  margin-bottom: 150px;
-  z-index: 1000;
-}
-
-#logo {
-  width: 634px;
-  max-width: 634px;
+.slogan span {
+  color: #cfcaf2;
 }
 
 .cta {
   z-index: 1000;
-}
-
-.cta .slogan {
-  margin-bottom: 40px;
-}
-
-.slogan span {
-  color: #cfcaf2;
+  -ms-flex-item-align: end;
+      -ms-grid-row-align: end;
+      align-self: end;
 }
 
 #iso1 {
@@ -99,8 +93,8 @@ h2 {
 #strip {
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-30%);
-          transform: translateY(-30%);
+  -webkit-transform: translateY(-35%);
+          transform: translateY(-35%);
   left: 0;
   z-index: 2;
 }
@@ -111,7 +105,7 @@ h2 {
   height: 1080px;
   left: 0px;
   top: 0px;
-  background: linear-gradient(1.17deg, rgba(21, 35, 49, 0.3) 1.13%, rgba(34, 39, 54, 0.3) 1.14%, rgba(0, 0, 0, 0.3) 99.14%);
+  background: linear-gradient(1.17deg, rgba(34, 39, 54, 0.3) 1.14%, rgba(0, 0, 0, 0.3) 99.14%);
   background-blend-mode: multiply;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
