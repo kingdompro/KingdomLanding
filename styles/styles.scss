@@ -117,44 +117,44 @@ h2 {
     }
 }
 
-.goYtb {      
-    display: flex;
-    align-items: center;
-    justify-content:space-around;
-    z-index: 1000;
-    padding-right: 30px;
-    padding-left: 20px;    
-    width: 428px;
-    height: 110px;
-    // background: url(/imgs/btn-bg.svg);
-    background: url(https://kingdompro.github.io/KingdomLanding/imgs/btn-bg.svg);
-    background-size: contain;
-    background-position: 0px 0px;
-    background-repeat: no-repeat;  
-    transition: all ease-in-out 300ms;
+// .goYtb {      
+//     display: flex;
+//     align-items: center;
+//     justify-content:space-around;
+//     z-index: 1000;
+//     padding-right: 30px;
+//     padding-left: 20px;    
+//     width: 428px;
+//     height: 110px;
+//     // background: url(/imgs/btn-bg.svg);
+//     background: url(https://kingdompro.github.io/KingdomLanding/imgs/btn-bg.svg);
+//     background-size: contain;
+//     background-position: 0px 0px;
+//     background-repeat: no-repeat;  
+//     transition: all ease-in-out 300ms;
     
-    &:hover {
-        @include bobEffect();    
+//     &:hover {
+//         @include bobEffect();    
     
-    }  
+//     }  
 
-    span {
-        @include btnText();
-        color: white;
-        margin-left: -80px;
-        margin-top: -10px;
-    }
+//     span {
+//         @include btnText();
+//         color: white;
+//         margin-left: -80px;
+//         margin-top: -10px;
+//     }
 
-    .icon {
-        background: url(https://kingdompro.github.io/KingdomLanding/imgs/ytb.svg);
-        // background: url(/imgs/ytb.svg);
-        background-size: contain;
-        background-position: 0px 0px;
-        background-repeat: no-repeat;
-        width: 200px;
-        height: 90px;          
-    }
-}
+//     .icon {
+//         background: url(https://kingdompro.github.io/KingdomLanding/imgs/ytb.svg);
+//         // background: url(/imgs/ytb.svg);
+//         background-size: contain;
+//         background-position: 0px 0px;
+//         background-repeat: no-repeat;
+//         width: 200px;
+//         height: 90px;          
+//     }
+// }
 
 #iso1 {
     position: absolute;
