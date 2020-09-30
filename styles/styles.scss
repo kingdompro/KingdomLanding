@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @font-face {
     font-family: "Proletarsk";
     src: url("/fonts/Proletarsk.ttf") format("truetype"),         
   }
 
 @mixin sloganFont {
-    font-family: Proletarsk;
+    font-family: 'Proletarsk', sans-serif;
     font-size: 27px;
     font-style: normal;
     font-weight: 400;
@@ -15,19 +16,18 @@
 }
 
 @mixin mainText {
-    font-family: Proletarsk;
+    font-family: 'Proletarsk', sans-serif;
     font-size: 48px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 600;
     // line-height: 59px;
-    letter-spacing: 0.15em;
+    letter-spacing: 5px;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-
 @mixin btnText {
-    font-family: Roboto;
+    font-family: 'Roboto', sans-serif;
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
@@ -36,8 +36,11 @@
     text-align: left;
 }
 
-$backgroundColor : linear-gradient(1.17deg, #0b1d2e 1.13%, #172035 1.14%, #0F172D 99.14%);
-
+$backgroundColor : linear-gradient(1.17deg, rgb(5, 13, 41) 1.14%, #020a1f 99.14%);
+$backgroundColor2 : linear-gradient(180deg, #3a0301 0.64%, #310103 100.03%);
+$textColor :  rgb(133, 135, 199);
+$textHLColor :  rgb(207, 202, 242);
+$bigTextColor : rgb(255, 255, 255);
 $btnGradient : linear-gradient(180deg, #E52D27 0.64%, #BF171D 100.03%);
 $iconColor : rgba(210, 34, 34, 1);
 @mixin iconShadows {
@@ -63,7 +66,7 @@ body {
     height: 100vh;
     overflow: hidden;
     background: $backgroundColor;  
-    color: #bdbdbd; 
+    color: $textColor; 
 }
 
 .container {
@@ -80,7 +83,7 @@ h2 {
     @include mainText();
     margin-bottom: 150px;
     z-index: 1000;
-    color: #fefefe;
+    color: $bigTextColor;
 }
 
 @mixin bobEffect {
@@ -108,13 +111,19 @@ h2 {
     }
 }
 
+.slogan{
+    span{
+        color: $textHLColor;
+    }
+}
+
 .goYtb {      
     display: flex;
     align-items: center;
     justify-content:space-around;
     z-index: 1000;
-    // padding-right: 30px;
-    // padding-left: 20px;    
+    padding-right: 30px;
+    padding-left: 20px;    
     width: 428px;
     height: 110px;
     background: url(/imgs/btn-bg.svg);
@@ -125,13 +134,23 @@ h2 {
     
     &:hover {
         @include bobEffect();    
+    
     }  
 
     span {
         @include btnText();
         color: white;
-        margin-left: -50px;
+        margin-left: -80px;
         margin-top: -10px;
+    }
+
+    .icon {
+        background: url(/imgs/ytb.svg);
+        background-size: contain;
+        background-position: 0px 0px;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 90px;          
     }
 }
 
@@ -152,7 +171,7 @@ h2 {
     right: 0px;
     top: 185.01px;
     z-index: 500; 
-    opacity: 50%;   
+    opacity: 40%;   
 }
 
 #strip {

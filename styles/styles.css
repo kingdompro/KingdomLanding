@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @font-face {
   font-family: "Proletarsk";
   src: url("/fonts/Proletarsk.ttf") format("truetype");
@@ -15,8 +16,8 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background: linear-gradient(1.17deg, #0b1d2e 1.13%, #172035 1.14%, #0F172D 99.14%);
-  color: #bdbdbd;
+  background: linear-gradient(1.17deg, #050d29 1.14%, #020a1f 99.14%);
+  color: #8587c7;
 }
 
 .container {
@@ -33,7 +34,7 @@ body {
 }
 
 p {
-  font-family: Proletarsk;
+  font-family: 'Proletarsk', sans-serif;
   font-size: 27px;
   font-style: normal;
   font-weight: 400;
@@ -43,16 +44,16 @@ p {
 }
 
 h2 {
-  font-family: Proletarsk;
+  font-family: 'Proletarsk', sans-serif;
   font-size: 48px;
   font-style: normal;
-  font-weight: 400;
-  letter-spacing: 0.15em;
+  font-weight: 600;
+  letter-spacing: 5px;
   text-align: center;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-bottom: 150px;
   z-index: 1000;
-  color: #fefefe;
+  color: white;
 }
 
 .head {
@@ -74,6 +75,10 @@ h2 {
   margin-bottom: 40px;
 }
 
+.slogan span {
+  color: #cfcaf2;
+}
+
 .goYtb {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -84,6 +89,8 @@ h2 {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   z-index: 1000;
+  padding-right: 30px;
+  padding-left: 20px;
   width: 428px;
   height: 110px;
   background: url(/imgs/btn-bg.svg);
@@ -104,7 +111,7 @@ h2 {
 }
 
 .goYtb span {
-  font-family: Roboto;
+  font-family: 'Roboto', sans-serif;
   font-size: 28px;
   font-style: normal;
   font-weight: 400;
@@ -112,8 +119,17 @@ h2 {
   letter-spacing: 0.05em;
   text-align: left;
   color: white;
-  margin-left: -50px;
+  margin-left: -80px;
   margin-top: -10px;
+}
+
+.goYtb .icon {
+  background: url(/imgs/ytb.svg);
+  background-size: contain;
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+  width: 200px;
+  height: 90px;
 }
 
 #iso1 {
@@ -130,7 +146,7 @@ h2 {
   right: 0px;
   top: 185.01px;
   z-index: 500;
-  opacity: 50%;
+  opacity: 40%;
 }
 
 #strip {
