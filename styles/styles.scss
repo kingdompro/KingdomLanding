@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 @font-face {
     font-family: "Proletarsk";
-    src: url("/fonts/Proletarsk.ttf") format("truetype"),         
-  }
+    src: url("/fonts/Proletarsk.ttf") format("truetype"),
+}
 
 @mixin sloganFont {
     font-family: 'Proletarsk', sans-serif;
@@ -41,12 +42,20 @@
     animation-iteration-count: infinite;
     transform-origin: 50% 50%;
 }
+
 @mixin rotation ($duration, $delay, $origin) {
-    animation: roll infinite;
+    animation: roll ease infinite;
     animation-duration: $duration;
     transform-origin: $origin;
-    animation-delay: $delay;   
+    animation-delay: $delay;
 }
+
+@mixin verticalScroll ($duration) {
+    animation: verticalScroll ease-in-out infinite alternate;
+    animation-duration: $duration;
+}
+
+
 // @mixin fadeIn ($duration) {
 //     // transition: all ease-out 300ms;
 //     animation: fadeIn;
@@ -56,11 +65,12 @@
 
 $backgroundColor : linear-gradient(1.17deg, rgb(5, 13, 41) 1.14%, #020a1f 99.14%);
 $backgroundColor2 : linear-gradient(180deg, #3a0301 0.64%, #310103 100.03%);
-$textColor :  rgb(133, 135, 199);
-$textHLColor :  rgb(207, 202, 242);
+$textColor : rgb(133, 135, 199);
+$textHLColor : rgb(207, 202, 242);
 $bigTextColor : rgb(255, 255, 255);
 $btnGradient : linear-gradient(180deg, #E52D27 0.64%, #BF171D 100.03%);
 $iconColor : rgba(210, 34, 34, 1);
+
 @mixin iconShadows {
     box-shadow: 3px 3px 8px 0px rgba(155, 25, 25, 0.9);
     box-shadow: -3px -3px 6px 0px rgba(255, 43, 43, 0.9);
@@ -68,7 +78,7 @@ $iconColor : rgba(210, 34, 34, 1);
     box-shadow: -3px 3px 6px 0px rgba(155, 25, 25, 0.2);
     box-shadow: -1px -1px 2px 0px rgba(155, 25, 25, 0.5) inset;
     box-shadow: 1px 1px 2px 0px rgba(255, 43, 43, 0.3) inset;
-} 
+}
 
 /////// END OF VARIABLES
 
@@ -83,8 +93,8 @@ body {
     width: 100vw;
     height: 100vh;
     overflow: hidden;
-    background: $backgroundColor;  
-    color: $textColor; 
+    background: $backgroundColor;
+    color: $textColor;
 }
 
 .container {
@@ -95,7 +105,7 @@ body {
     display: grid;
     justify-items: center;
     padding: 5%;
-    
+
 }
 
 h2 {
@@ -109,17 +119,18 @@ h2 {
 .head {
     // margin-top: 5em;
     // margin-bottom: 10em;
-    z-index: 1000;    
+    z-index: 1000;
 }
 
 #logo {
     width: 634px;
-    max-width: 634px;    
+    max-width: 634px;
 }
 
-.slogan{
+.slogan {
     @include sloganFont();
-        span{
+
+    span {
         color: $textHLColor;
     }
 }
@@ -129,7 +140,7 @@ h2 {
     align-self: end;
     // padding-bottom: 10px;
 
-    .ctaText{
+    .ctaText {
         @include sloganFont();
     }
 }
@@ -141,19 +152,38 @@ h2 {
     left: -10%;
     top: -3%;
     z-index: 1;
-    @include rotation(20s, 15sec, 50% 50%);
-    opacity: 40%;
-    filter: blur(8px);   
+    @include rotation(30s, 15s, 50% 50%);
+    opacity: 50%;
+    filter: blur(8px);
 }
 
-#strip {
+.photoStrip-wrapper {
     position: absolute;
     top: 50%;
     transform: translateY(-35%);
     left: 0;
     // opacity: 40%;
+    width: 100vw;
+    overflow: hidden;
     z-index: 10;
+
+    .photoStrip {
+        position: relative;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 8px;
+        @include verticalScroll(90s)
+    }
 }
+
+// #strip {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-35%);
+//     left: 0;
+//     // opacity: 40%;
+//     z-index: 10;
+// }
 
 #iso2 {
     position: absolute;
@@ -161,10 +191,10 @@ h2 {
     // height: 776.46px;
     right: -20%;
     top: 185.01px;
-    z-index: 500; 
-    opacity: 10%; 
+    z-index: 500;
+    opacity: 5%;
     filter: blur(2px);
-    @include rotation(60s, 0, 50% 50%); 
+    @include rotation(60s, 0, 50% 50%);
 }
 
 
@@ -174,7 +204,7 @@ h2 {
     height: 1080px;
     left: 0px;
     top: 0px;
-    background: linear-gradient(1.17deg, rgba(34, 39, 54,1) 1.14%, rgba(0, 0, 0,1 ) 99.14%);
+    background: linear-gradient(1.17deg, rgba(34, 39, 54, 1) 1.14%, rgba(0, 0, 0, 1) 99.14%);
     background-blend-mode: multiply;
     backdrop-filter: blur(3px);
     opacity: 70%;
@@ -228,21 +258,42 @@ h2 {
     }
 }
 
+@keyframes verticalScroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
 
 // PRELOADER CSS
+
+.spinner-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 999999;
+}
 
 .spinner {
     width: 40px;
     height: 40px;
-  
+
     // position: relative;
     // margin: 100px auto;
     position: absolute;
     top: 48%;
     left: 48%;
-  }
-  
-  .double-bounce1, .double-bounce2 {
+}
+
+.double-bounce1,
+.double-bounce2 {
     width: 100%;
     height: 100%;
     border-radius: 50%;
@@ -251,37 +302,38 @@ h2 {
     position: absolute;
     top: 0;
     left: 0;
-    
+
     -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
     animation: sk-bounce 2.0s infinite ease-in-out;
-  }
-  
-  .double-bounce2 {
+}
+
+.double-bounce2 {
     -webkit-animation-delay: -1.0s;
     animation-delay: -1.0s;
-  }
-  
-  @-webkit-keyframes sk-bounce {
-    0%, 100% { -webkit-transform: scale(0.0) }
-    50% { -webkit-transform: scale(1.0) }
-  }
-  
-  @keyframes sk-bounce {
-    0%, 100% { 
-      transform: scale(0.0);
-      -webkit-transform: scale(0.0);
-    } 50% { 
-      transform: scale(1.0);
-      -webkit-transform: scale(1.0);
-    }
-  }
+}
 
-  .spinner-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    z-index: 999999;
+@-webkit-keyframes sk-bounce {
+
+    0%,
+    100% {
+        -webkit-transform: scale(0.0)
     }
+
+    50% {
+        -webkit-transform: scale(1.0)
+    }
+}
+
+@keyframes sk-bounce {
+
+    0%,
+    100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+
+    50% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    }
+}
