@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @font-face {
   font-family: "Proletarsk";
-  src: url("./fonts/Proletarsk.ttf") format("truetype");
+  src: url("/fonts/Proletarsk.ttf") format("truetype");
 }
 
 * {
@@ -50,10 +50,6 @@ h2 {
 #logo {
   width: 634px;
   max-width: 634px;
-  -webkit-animation: fadeIn;
-          animation: fadeIn;
-  -webkit-animation-duration: 3s;
-          animation-duration: 3s;
 }
 
 .slogan {
@@ -64,10 +60,6 @@ h2 {
   letter-spacing: 0.05em;
   text-align: left;
   text-align: center;
-  -webkit-animation: fadeIn;
-          animation: fadeIn;
-  -webkit-animation-duration: 3500ms;
-          animation-duration: 3500ms;
 }
 
 .slogan span {
@@ -236,5 +228,61 @@ h2 {
             transform: translateY(0);
     opacity: 1;
   }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 48%;
+  left: 48%;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #e1e1e1;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% {
+    -webkit-transform: scale(0);
+  }
+  50% {
+    -webkit-transform: scale(1);
+  }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  50% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+.spinner-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: linear-gradient(1.17deg, #050d29 1.14%, #020a1f 99.14%);
+  z-index: 999999;
 }
 /*# sourceMappingURL=styles.css.map */
