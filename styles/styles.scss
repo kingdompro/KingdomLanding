@@ -41,6 +41,18 @@
     animation-iteration-count: infinite;
     transform-origin: 50% 50%;
 }
+@mixin rotation ($duration, $delay, $origin) {
+    animation: roll infinite;
+    animation-duration: $duration;
+    transform-origin: $origin;
+    animation-delay: $delay;   
+}
+@mixin fadeIn ($duration) {
+    // transition: all ease-out 300ms;
+    animation: fadeIn;
+    animation-duration: $duration;    
+    // animation-delay: $delay;   
+}
 
 $backgroundColor : linear-gradient(1.17deg, rgb(5, 13, 41) 1.14%, #020a1f 99.14%);
 $backgroundColor2 : linear-gradient(180deg, #3a0301 0.64%, #310103 100.03%);
@@ -86,8 +98,6 @@ body {
     
 }
 
-
-
 h2 {
     @include mainText();
     align-self: center;
@@ -106,13 +116,12 @@ h2 {
 #logo {
     width: 634px;
     max-width: 634px;
-}
-
-p {
-    @include sloganFont();  
+    @include fadeIn(3s);
 }
 
 .slogan{
+    @include sloganFont();    
+    @include fadeIn(3500ms);
     span{
         color: $textHLColor;
     }
@@ -121,7 +130,11 @@ p {
 .cta {
     z-index: 1000;
     align-self: end;
-  
+    // padding-bottom: 10px;
+
+    .ctaText{
+        @include sloganFont();
+    }
 }
 
 
@@ -167,31 +180,37 @@ p {
 
 #iso1 {
     position: absolute;
-    width: 677.79px;
-    height: 421.36px;
-    left: 0px;
-    top: 0px;
+    // width: 677.79px;
+    // height: 421.36px;
+    left: -10%;
+    top: -3%;
     z-index: 1;
-    // opacity: 50%;   
+    @include rotation(15s, 15sec, 50% 50%);
+    opacity: 40%;
+    filter: blur(8px);   
+}
+
+#strip {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-35%);
+    left: 0;
+    // opacity: 40%;
+    z-index: 10;
 }
 
 #iso2 {
     position: absolute;
     // width: 783.02px;
     // height: 776.46px;
-    right: 0px;
+    right: -20%;
     top: 185.01px;
     z-index: 500; 
-    opacity: 40%;   
+    opacity: 10%; 
+    filter: blur(2px);
+    @include rotation(60s, 0, 50% 50%); 
 }
 
-#strip {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-35%);
-        left: 0;
-        z-index: 2;
-}
 
 .filter {
     position: absolute;
@@ -199,10 +218,22 @@ p {
     height: 1080px;
     left: 0px;
     top: 0px;
-    background: linear-gradient(1.17deg, rgba(34, 39, 54, 0.3) 1.14%, rgba(0, 0, 0, 0.3) 99.14%);
+    background: linear-gradient(1.17deg, rgba(34, 39, 54,1) 1.14%, rgba(0, 0, 0,1 ) 99.14%);
     background-blend-mode: multiply;
     backdrop-filter: blur(3px);
-    z-index: 3;
+    opacity: 70%;
+    z-index: 11;
+}
+
+#video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1920px;
+    height: 1080px;
+    opacity: 10%;
+    z-index: -1;
+
 }
 
 @keyframes bob {
@@ -216,5 +247,27 @@ p {
 
     100% {
         transform: translate(0px, 0px);
+    }
+}
+
+@keyframes roll {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateY(-15px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
     }
 }

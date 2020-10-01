@@ -50,9 +50,13 @@ h2 {
 #logo {
   width: 634px;
   max-width: 634px;
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 3s;
+          animation-duration: 3s;
 }
 
-p {
+.slogan {
   font-family: 'Proletarsk', sans-serif;
   font-size: 27px;
   font-style: normal;
@@ -60,6 +64,10 @@ p {
   letter-spacing: 0.05em;
   text-align: left;
   text-align: center;
+  -webkit-animation: fadeIn;
+          animation: fadeIn;
+  -webkit-animation-duration: 3500ms;
+          animation-duration: 3500ms;
 }
 
 .slogan span {
@@ -73,21 +81,32 @@ p {
       align-self: end;
 }
 
-#iso1 {
-  position: absolute;
-  width: 677.79px;
-  height: 421.36px;
-  left: 0px;
-  top: 0px;
-  z-index: 1;
+.cta .ctaText {
+  font-family: 'Proletarsk', sans-serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  text-align: left;
+  text-align: center;
 }
 
-#iso2 {
+#iso1 {
   position: absolute;
-  right: 0px;
-  top: 185.01px;
-  z-index: 500;
+  left: -10%;
+  top: -3%;
+  z-index: 1;
+  -webkit-animation: roll infinite;
+          animation: roll infinite;
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-delay: 15sec;
+          animation-delay: 15sec;
   opacity: 40%;
+  -webkit-filter: blur(8px);
+          filter: blur(8px);
 }
 
 #strip {
@@ -96,7 +115,25 @@ p {
   -webkit-transform: translateY(-35%);
           transform: translateY(-35%);
   left: 0;
-  z-index: 2;
+  z-index: 10;
+}
+
+#iso2 {
+  position: absolute;
+  right: -20%;
+  top: 185.01px;
+  z-index: 500;
+  opacity: 10%;
+  -webkit-filter: blur(2px);
+          filter: blur(2px);
+  -webkit-animation: roll infinite;
+          animation: roll infinite;
+  -webkit-animation-duration: 60s;
+          animation-duration: 60s;
+  -webkit-transform-origin: 50% 50%;
+          transform-origin: 50% 50%;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
 }
 
 .filter {
@@ -105,11 +142,22 @@ p {
   height: 1080px;
   left: 0px;
   top: 0px;
-  background: linear-gradient(1.17deg, rgba(34, 39, 54, 0.3) 1.14%, rgba(0, 0, 0, 0.3) 99.14%);
+  background: linear-gradient(1.17deg, #222736 1.14%, black 99.14%);
   background-blend-mode: multiply;
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
-  z-index: 3;
+  opacity: 70%;
+  z-index: 11;
+}
+
+#video-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1920px;
+  height: 1080px;
+  opacity: 10%;
+  z-index: -1;
 }
 
 @-webkit-keyframes bob {
@@ -139,6 +187,54 @@ p {
   100% {
     -webkit-transform: translate(0px, 0px);
             transform: translate(0px, 0px);
+  }
+}
+
+@-webkit-keyframes roll {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes roll {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
   }
 }
 /*# sourceMappingURL=styles.css.map */
