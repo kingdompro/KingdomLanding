@@ -280,8 +280,8 @@ h2 {
   position: fixed;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   background-color: linear-gradient(1.17deg, #050d29 1.14%, #020a1f 99.14%);
   z-index: 999999;
 }
