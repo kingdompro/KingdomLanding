@@ -277,12 +277,12 @@ h2 {
 }
 
 .spinner-wrapper {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: linear-gradient(1.17deg, #050d29 1.14%, #020a1f 99.14%);
+  background-color: black;
   z-index: 999999;
 }
 /*# sourceMappingURL=styles.css.map */
