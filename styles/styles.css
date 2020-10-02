@@ -254,8 +254,8 @@ h2 {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-120%);
+            transform: translateX(-120%);
   }
 }
 
@@ -265,8 +265,8 @@ h2 {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
+    -webkit-transform: translateX(-120%);
+            transform: translateX(-120%);
   }
 }
 
@@ -276,7 +276,8 @@ h2 {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: linear-gradient(1.17deg, #050d29 1.14%, #020a1f 99.14%);
+  background-color: black;
+  background-color: linear-gradient(1.17deg, #050d29 0%, #020a1f 100%);
   z-index: 999999;
 }
 
